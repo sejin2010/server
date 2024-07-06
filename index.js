@@ -4,16 +4,8 @@ const app = express();
 const ytdl = require('ytdl-core');
 const port = process.env.PORT || 5000;
 
-// app.use(cors());
 app.use(express.json());
-
-app.use(cors({
-  origin: 'http://localhost:5173/',  // Allow only this origin
-  methods: ['GET', 'POST'],      // Allow only GET and POST requests
-  allowedHeaders: ['Content-Type'] // Allow only Content-Type header
-}));
-
-
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.send('server running port 5000')
